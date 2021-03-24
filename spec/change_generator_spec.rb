@@ -45,5 +45,9 @@ describe ChangeGenerator do
     it 'returns ["£1", "50p", "20p", "10p", "5p"] for an input of 1.85' do
       expect(subject.convert(1.85)).to eq(["£1", "50p", "20p", "10p", "5p"])
     end
+
+    it 'returns error for input of NAN' do
+      expect{ subject.convert('a') }.to raise_error("Incorrect input")
+    end
   end
 end
