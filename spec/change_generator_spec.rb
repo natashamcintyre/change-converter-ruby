@@ -37,5 +37,13 @@ describe ChangeGenerator do
     it 'returns ["£1", "50p", "20p"] for an input of 1.70' do
       expect(subject.convert(1.70)).to eq(["£1", "50p", "20p"])
     end
+
+    it 'returns ["£1", "50p", "20p", "10p"] for an input of 1.80' do
+      expect(subject.convert(1.80)).to eq(["£1", "50p", "20p", "10p"])
+    end
+
+    it 'returns ["£1", "50p", "20p", "10p", "5p"] for an input of 1.85' do
+      expect(subject.convert(1.85)).to eq(["£1", "50p", "20p", "10p", "5p"])
+    end
   end
 end
